@@ -25,7 +25,7 @@ socket.on('data', function(data) {
   } else if (datain[0] === ip.address()) {
     console.log('Direct message from server : ' + datain[1]);
   } else {
-    if (datain.length == 2) {
+    if (datain.length == 2 && datain[0] === ip.address()) {
       console.log(datain[0] + ' ' + datain[1]);
     } else {
       console.log(datain[0]);

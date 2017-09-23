@@ -29,8 +29,14 @@ server = net.createServer(function(socket) {
     // console.log("map.get(ch1[0]) = ", map.get(ch1[0]));
 
     if (ch1.length == 2 && map.get(ch1[0]) === "unknow") {
-      map.set(ch1[0], ch1[1].replace('\r\n', ""));
+      //map.set(ch1[0], ch1[1].replace('\r\n', ""));
       //console.log("in here!!!!");
+
+//Version mai
+      var word = ch1[1];
+      var setdata = word.split('\n');
+      map.set(ch1[0],setdata[0]);
+
       socket.write("============ Connect Finished. ============");
     }
 
